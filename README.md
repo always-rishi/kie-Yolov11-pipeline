@@ -1,14 +1,11 @@
 # Ingredient Extraction Pipeline
 
-### Video Demonstration
 
-[Watch the Video Demonstration on Google Drive](https://drive.google.com/file/d/1M43hXeyu1G7LP0-KyQ6SvC2iYv7IlN2z/view?usp=sharing)
-
-## 🎯 What Are We Doing?
+##  What Are We Doing?
 
 Our objective is to build a robust, automated pipeline capable of extracting structured ingredient lists from product images. Real-world product packaging often contains complex backgrounds, varied lighting, and distorted text. To tackle this, we are developing a multi-stage system that first detects where the text is located, accurately transcribes that text, and then uses a Large Language Model (LLM) to semantically identify and format the actual ingredients from the raw text.
 
-## 🔄 The Pipeline
+##  The Pipeline
 
 The ingredient extraction process follows a structured 8-step pipeline:
 
@@ -21,7 +18,7 @@ The ingredient extraction process follows a structured 8-step pipeline:
 7. **Ingredient Extraction:** Rule-based / NLP extraction (next step).
 8. **Final JSON Output:** Final structured data ready for Database / API / Export.
 
-## 🛠️ Discussing the Pipeline
+##  Discussing the Pipeline
 
 Our pipeline was designed to handle the complexities of real-world product packaging through a carefully evaluated sequence of computer vision and NLP models.
 
@@ -38,7 +35,7 @@ While Faster R-CNN (a two-stage Region Proposal Network) provided slightly highe
 ### End-to-End Integration
 The complete pipeline bridges computer vision and natural language processing. Once YOLO isolates the text regions, the bounding boxes are cropped and passed to **PaddleOCR** for high-accuracy character transcription. Finally, this unstructured, aggregated text is fed into **Llama 3.3 (via the Groq API)**, which intelligently parses the raw string into a structured JSON list of ingredients.
 
-## 📊 Results
+##  Results
 
 Our model improved significantly as we scaled our dataset and transitioned from YOLOv8 to YOLO11n.
 
@@ -59,16 +56,16 @@ Our model improved significantly as we scaled our dataset and transitioned from 
 
 Here are visual demonstrations of our pipeline in action:
 
-![Result 1](./assets/image.png)
+![Result 1](./assets/Image-1.png)
 
-![Result 2](./assets/image2.png)
+![Result 2](./assets/Image-2.png)
 
-## 🧰 Tech Stack
+##  Tech Stack
 
 - **Backend:** FastAPI, Ultralytics YOLO, PaddleOCR, OpenCV, Groq (Llama 3.3 70B)
 - **Frontend:** React, Vite, Tailwind CSS
 
-## ⚙️ Setup
+##  Setup
 
 **Backend**
 ```bash
